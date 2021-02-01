@@ -1,5 +1,4 @@
-import java.util.HashMap;
-import java.util.Random;
+import java.util.Date;
 
 /*
  * Author: Pratap Gurung
@@ -129,6 +128,8 @@ public class BankAccount {
 		bck1.withdraw(500, 10);
 		bck2.withdraw(500, 5);
 		bck3.withdraw(5000, 100);
+		
+	
 	}
 
 }
