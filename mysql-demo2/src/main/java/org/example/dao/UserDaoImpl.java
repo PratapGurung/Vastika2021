@@ -1,7 +1,7 @@
 package org.example.dao;
 
 import org.example.model.User;
-import org.example.util.QueryUtil;
+    import org.example.util.QueryUtil;
 import org.example.util.dbUtil;
 
 import java.sql.Date;
@@ -24,7 +24,7 @@ public class UserDaoImpl implements UserDao{
             ps.setString(3,user.getMobileNo());
             ps.setDouble(4,user.getSalary());
             ps.setBoolean(5, user.isEnable());
-           // ps.setDate(6,);
+            ps.setDate(6, Date.valueOf(user.getDob()));
             saved = ps.executeUpdate();
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
@@ -43,7 +43,7 @@ public class UserDaoImpl implements UserDao{
             ps.setString(3,user.getMobileNo());
             ps.setDouble(4,user.getSalary());
             ps.setBoolean(5, user.isEnable());
-             ps.setDate(6, Date.valueOf(user.getDob()));
+            ps.setDate(6, Date.valueOf(user.getDob()));
             ps.setInt(7,user.getId());
             updated = ps.executeUpdate();
         } catch (SQLException | ClassNotFoundException e) {
@@ -71,7 +71,7 @@ public class UserDaoImpl implements UserDao{
         User user = new User();
 
         try(
-                PreparedStatement ps = dbUtil.getConnection().prepareStatement(QueryUtil.LIST_SQL);
+                PreparedStatement ps = dbUtil.getConnection().prepareStatement(QueryUtil.USER_BY_ID_SQL);
         ){
             ResultSet rs = ps.executeQuery();
             if(rs.next()){
