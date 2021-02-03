@@ -1,4 +1,4 @@
-package org.example;
+package org.creditCard;
 
 import static org.junit.Assert.assertTrue;
 
