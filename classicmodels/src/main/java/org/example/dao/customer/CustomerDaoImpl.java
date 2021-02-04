@@ -14,9 +14,9 @@ import java.util.List;
 public class CustomerDaoImpl implements CustomerDao{
 
     @Override
-    public int saveUser(Customer customer) {
+    public int saveCustomer(Customer customer) {
         int saved = 0;
-        try(PreparedStatement ps = userAction(customer,queryUtil.SAVE_SQl);) {
+        try(PreparedStatement ps = customerAction(customer,queryUtil.SAVE_SQl);) {
             saved =  ps.executeUpdate();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -25,9 +25,9 @@ public class CustomerDaoImpl implements CustomerDao{
     }
 
     @Override
-    public int updateUser(Customer customer) {
+    public int updateCustomer(Customer customer) {
         int updated = 0;
-        try(PreparedStatement ps = userAction(customer,queryUtil.UPDATE_SQL);) {
+        try(PreparedStatement ps = customerAction(customer,queryUtil.UPDATE_SQL);) {
             ps.setInt(13,customer.getCustomerNumber());
             updated =  ps.executeUpdate();
         } catch (SQLException throwables) {
@@ -37,7 +37,7 @@ public class CustomerDaoImpl implements CustomerDao{
     }
 
     @Override
-    public int deleteUser(int id) {
+    public int deleteCustomer(int id) {
         int deleted = 0;
         try(
                 PreparedStatement ps = dbUtil.getConnection().prepareStatement(queryUtil.DELETE_SQL);
@@ -51,7 +51,7 @@ public class CustomerDaoImpl implements CustomerDao{
     }
 
     @Override
-    public Customer getUserById(int id) {
+    public Customer getCustomerById(int id) {
 
         try(
                 PreparedStatement ps = dbUtil.getConnection().prepareStatement(queryUtil.CUSTOMER_BY_ID_SQL);
@@ -69,7 +69,7 @@ public class CustomerDaoImpl implements CustomerDao{
     }
 
     @Override
-    public List<Customer> getAllUser() {
+    public List<Customer> getAllCustomer() {
         List<Customer> userlist = new ArrayList<>();
 
         try(
@@ -87,7 +87,7 @@ public class CustomerDaoImpl implements CustomerDao{
         return userlist;
     }
 
-    private static PreparedStatement userAction(Customer customer, String sql){
+    private static PreparedStatement customerAction(Customer customer, String sql){
         try(
                 PreparedStatement ps = dbUtil.getConnection().prepareStatement(sql);
         ){
