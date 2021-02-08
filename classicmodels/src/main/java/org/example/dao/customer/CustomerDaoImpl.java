@@ -92,11 +92,8 @@ public class CustomerDaoImpl implements CustomerDao{
                 PreparedStatement ps = dbUtil.getConnection().prepareStatement(sql);
         ){
             ps.setString(1,customer.getCustomerName());
-            ps.setString(2,customer.getContactFirstName());
-            ps.setString(3,customer.getContactLastName());
             ps.setString(4,customer.getPhone());
             ps.setString(5,customer.getAddressLine1());
-            ps.setString(6,customer.getAddressLine2());
             ps.setString(7,customer.getCity());
             ps.setString(8,customer.getState());
             ps.setString(9,customer.getPostalCode());
@@ -116,11 +113,8 @@ public class CustomerDaoImpl implements CustomerDao{
         try {
             customer.setCustomerNumber(rs.getInt("customerNumber"));
             customer.setCustomerName(rs.getString("customerName"));
-            customer.setContactFirstName(rs.getString("contactFirstName"));
-            customer.setContactLastName(rs.getString("contactLastName"));
             customer.setPhone(rs.getString("phone"));
             customer.setAddressLine1(rs.getString("addressLine1"));
-            customer.setAddressLine2(rs.getString("addressLine2"));
             customer.setCity(rs.getString("city"));
             customer.setState(rs.getString("state"));
             customer.setPostalCode(rs.getString("postalCode"));

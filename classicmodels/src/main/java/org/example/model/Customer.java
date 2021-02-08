@@ -5,11 +5,8 @@ import java.time.LocalDate;
 public class Customer {
     private int customerNumber;
     private String customerName;
-    private String contactLastName;
-    private String contactFirstName;
     private String phone;
     private String addressLine1;
-    private String addressLine2;
     private String city;
     private String state;
     private String postalCode;
@@ -33,22 +30,6 @@ public class Customer {
         this.customerName = customerName;
     }
 
-    public String getContactLastName() {
-        return contactLastName;
-    }
-
-    public void setContactLastName(String contactLastName) {
-        this.contactLastName = contactLastName;
-    }
-
-    public String getContactFirstName() {
-        return contactFirstName;
-    }
-
-    public void setContactFirstName(String contactFirstName) {
-        this.contactFirstName = contactFirstName;
-    }
-
     public String getPhone() {
         return phone;
     }
@@ -63,14 +44,6 @@ public class Customer {
 
     public void setAddressLine1(String addressLine1) {
         this.addressLine1 = addressLine1;
-    }
-
-    public String getAddressLine2() {
-        return addressLine2;
-    }
-
-    public void setAddressLine2(String addressLine2) {
-        this.addressLine2 = addressLine2;
     }
 
     public String getCity() {
