@@ -2,6 +2,8 @@ package com.vastika.customer_info_management.controller;
 
 import com.vastika.customer_info_management.model.Customer;
 import com.vastika.customer_info_management.service.CustomerService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +18,7 @@ public class CustomerController {
     public CustomerController(CustomerService customerService){
         this.customerService = customerService;
     }
+    //public CustomerController(Environment environment){this.environment = environment;}
 
     @GetMapping("/add_customer")
     public String getCustomerForm(){

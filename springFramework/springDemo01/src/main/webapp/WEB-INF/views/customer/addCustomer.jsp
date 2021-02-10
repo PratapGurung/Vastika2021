@@ -5,25 +5,45 @@
     <title>Title</title>
 </head>
 <body>
-<form action="">
-    <label>Customer name:</label><br>
-    <input type="text" id="name"><br>
-    <label>Phone:</label><br>
-    <input type="text" id="phone"><br>
-    <label>Address line: </label><br>
-    <input type="text" id="address"><br>
-    <lable>City:</lable><br>
-    <input type="text" id="city"><br>
-    <label>State: </label><br>
-    <input type="text" id="state"><br>
-    <label>Zipcode: </label><br>
-    <input type="text" id="zip"><br>
-    <lable>Country:</lable><br>
-    <input type="text" id="country"><br>
-    <label>Credit Limit: </label><br>
-    <input type="number" id="creditLimit">
-    <br><br>
-    <input type="submit" value="Submit">
+<form action="save_customer" method="post">
+    <div>
+        <label>Customer name:</label>
+        <input type="text" name="customer_name">
+    </div>
+    <div>
+        <label>Phone:</label>
+        <input type="text" name="phone">
+    </div>
+    <div>
+        <label>Address line: </label>
+        <input type="text" name="address_line">
+    </div>
+    <div>
+        <lable>City:</lable>
+        <input type="text" name="city">
+    </div>
+    <div>
+        <label>State: </label>
+        <input type="text" name="state">
+    </div>
+    <div>
+        <label>Zipcode: </label>
+        <input type="text" name="postal_code">
+    </div>
+    <div>
+        <lable>Country:</lable>
+        <input type="text" name="country">
+    </div>
+    <div>
+        <label>Date of Birth: </label>
+        <input type="date" name="date_of_birth">
+    </div>
+    <div>
+        <label>Comments: </label>
+        <textarea rows="5" cols="20" name="comments"></textarea>
+    </div>
+
+    <div><input type="submit" value="Submit"></div>
 </form>
 </body>
 </html>

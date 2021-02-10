@@ -1,8 +1,10 @@
 package com.vastika.customer_info_management.model;
 
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Table(name ="customers")
@@ -10,14 +12,15 @@ import javax.persistence.*;
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int customerNumber;
-    private String customerName;
+    private int customer_number;
+    private String customer_name;
     private String phone;
-    private String addressLine1;
+    private String address_line;
     private String city;
     private String state;
-    private String postalCode;
+    private String postal_code;
     private String country;
-    private String saleRepEmployeeNumber;
-    private double creditLimit;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate date_of_birth;
+    private String comments;
 }
