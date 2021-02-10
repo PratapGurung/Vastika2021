@@ -1,7 +1,6 @@
 package com.vastika.customer_info_management.model;
 
 import lombok.Data;
-import org.hibernate.annotations.GeneratorType;
 
 import javax.persistence.*;
 
@@ -19,7 +18,8 @@ public class Employee {
     private String email;
     private String officeCode;
     private int reportsTo;
-    private String jobTitle;
+   // @ManyToOne
+   // private Role jobTitle;
 
 
 }

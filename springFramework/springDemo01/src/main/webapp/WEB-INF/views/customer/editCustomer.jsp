@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Edit Customer</title>
+    <%@ include file="header.jsp"%>
 </head>
 <body>
 <form action="save_customer" method="post">

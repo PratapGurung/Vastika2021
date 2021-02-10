@@ -10,6 +10,7 @@
             border-collapse: collapse;
         }
     </style>
+    <%@ include file="header.jsp"%>
 </head>
 <body>
 <h1>All customer</h1>

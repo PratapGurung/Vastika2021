@@ -13,7 +13,9 @@ public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int customer_number;
+    private String username;
     private String customer_name;
+    private String password;
     private String phone;
     private String address_line;
     private String city;
@@ -23,4 +25,7 @@ public class Customer {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate date_of_birth;
     private String comments;
+    @OneToOne
+    private Role role;
+
 }

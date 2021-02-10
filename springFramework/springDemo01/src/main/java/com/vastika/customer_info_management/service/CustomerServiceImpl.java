@@ -2,6 +2,7 @@ package com.vastika.customer_info_management.service;
 
 import com.vastika.customer_info_management.model.Customer;
 import com.vastika.customer_info_management.repository.CustomerRepository;
+import com.vastika.customer_info_management.util.PasswordUtil;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,11 +18,15 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void saveCustomer(Customer customer) {
+        String password = PasswordUtil.encodePasword(customer.getPassword());
+        customer.setPassword(password);
         customerRepository.save(customer);
     }
 
     @Override
     public void updateCustomer(Customer customer) {
+        String password = PasswordUtil.encodePasword(customer.getPassword());
+        customer.setPassword(password);
         customerRepository.save(customer);
     }
 

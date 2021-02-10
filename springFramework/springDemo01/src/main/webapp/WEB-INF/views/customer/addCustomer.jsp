@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <%@ include file="header.jsp"%>
 </head>
 <body>
 <form action="save_customer" method="post">
     <div>
         <label>Customer name:</label>
         <input type="text" name="customer_name">
+    </div>
+    <div>
+        <label>password:</label>
+        <input type="password" name="password">
     </div>
     <div>
         <label>Phone:</label>
